@@ -47,7 +47,7 @@ func setVariables():
 	GameVariables.cellsInRow = GameVariables.currentBoardSize()
 	GameVariables.defaultCells = []
 	
-	cellSize = boardLength / GameVariables.cellsInRow
+	cellSize = MathService.integerDivision(boardLength, GameVariables.cellsInRow)
 	gridOffset = 50
 	
 	GameVariables.numberLists = {}
@@ -167,11 +167,6 @@ func rotateArray(array):
 
 
 func setStartingNumbers():
-	# randomly choose a quadrant to focus on finding numbers
-	# in the quadrant, find the first vertical number that is longer than previous for the first number
-	# find the last horizontal number that is before the first number that is longer than those before it
-	# as a final options if needed, take the first largest digit number found from the opposite quadrants rows
-	
 	var startingHints = 0
 	
 	if GameVariables.difficulty == GameConstants.EASY:
@@ -182,15 +177,13 @@ func setStartingNumbers():
 		startingHints = 1
 	else: return
 	
-	# randomize 0 - 3
 	var quadrant = randi() % 3
 	var upperIndexes = []
 	var lowerIndexes = []
 	
-	# Get the ranges of numbers associated with the quadrant
-	for i in range(GameVariables.cellsInRow / 2):
+	for i in range(MathService.integerDivision(GameVariables.cellsInRow, 2)):
 		lowerIndexes.append(i)
-	for i in range((GameVariables.cellsInRow + 1) / 2, GameVariables.cellsInRow):
+	for i in range(MathService.integerDivision((GameVariables.cellsInRow + 1), 2), GameVariables.cellsInRow):
 		upperIndexes.append(i)
 	upperIndexes.reverse()
 	

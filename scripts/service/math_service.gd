@@ -18,10 +18,14 @@ func getSubtractionFormulaForNumber(number):
 
 
 func getEquation(number, type):
-	var mod = max(1, int(number) / 2)
+	var mod = max(1, MathService.integerDivision(number, 2))
 	var b = randi() % (mod)
 	var a = number + (type * b)
 	var typeString = " + "
 	if type == -1:
 		typeString = " - "
 	return {str(a) + typeString + str(b): number}
+
+
+func integerDivision(a, b):
+	return int(float(a) / float(b))
