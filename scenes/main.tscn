@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfqsbqqova5as"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_20syi"]
+[ext_resource type="Script" path="res://scripts/menu_view.gd" id="3_5xw4r"]
+[ext_resource type="Script" path="res://scripts/game_view.gd" id="3_ilhto"]
+[ext_resource type="PackedScene" uid="uid://c32ofu1t18tej" path="res://scenes/menu_scene.tscn" id="5_6hiyu"]
+[ext_resource type="Script" path="res://scripts/difficulty_view.gd" id="5_51p8g"]
+[ext_resource type="PackedScene" uid="uid://bu1pfbx2t5iu5" path="res://scenes/difficulty_scene.tscn" id="7_18deh"]
+[ext_resource type="Script" path="res://scripts/settings_view.gd" id="8_1mku3"]
+[ext_resource type="PackedScene" uid="uid://b12qoc0ooov3k" path="res://scenes/settings_menu.tscn" id="9_ujeu4"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_20syi")
+
+[node name="Custom Background" type="Polygon2D" parent="."]
+position = Vector2(-575, 447)
+rotation = -0.890118
+scale = Vector2(1.96358, 2.02496)
+color = Color(0.207843, 0.207843, 0.207843, 1)
+polygon = PackedVector2Array(-10, -10, 910, -10, 910, 660, -10, 660)
+metadata/_edit_lock_ = true
+
+[node name="Custom Background Accent" type="Polygon2D" parent="."]
+position = Vector2(-575, 447)
+rotation = -0.890118
+scale = Vector2(1.96358, 2.02496)
+color = Color(0.466667, 0.466667, 0.466667, 1)
+polygon = PackedVector2Array(-10, -10, 910, -10, 910, 660, -10, 660)
+vertex_colors = PackedColorArray(0, 0, 1, 0.196078, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.00784314, 1, 0.196078)
+metadata/_edit_lock_ = true
+
+[node name="Game View" type="Node2D" parent="."]
+position = Vector2(0, 650)
+script = ExtResource("3_ilhto")
+
+[node name="Menu View" type="Node2D" parent="."]
+script = ExtResource("3_5xw4r")
+
+[node name="Menu Scene" parent="Menu View" instance=ExtResource("5_6hiyu")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Difficulty View" type="Node2D" parent="."]
+position = Vector2(0, -700)
+script = ExtResource("5_51p8g")
+
+[node name="Difficulty Scene" parent="Difficulty View" instance=ExtResource("7_18deh")]
+
+[node name="Settings View" type="Node2D" parent="."]
+position = Vector2(900, 0)
+script = ExtResource("8_1mku3")
+
+[node name="Settings Menu" parent="Settings View" instance=ExtResource("9_ujeu4")]

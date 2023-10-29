@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://ryi1s3cauypa"]
+
+[ext_resource type="Script" path="res://scripts/number_menu.gd" id="1_6otv4"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_trd5d"]
+
+[sub_resource type="Theme" id="Theme_4mwfs"]
+
+[node name="Number Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -570.0
+offset_bottom = -550.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6otv4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 730.0
+offset_bottom = 75.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button0" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "0"
+
+[node name="Button1" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = SubResource("Theme_4mwfs")
+toggle_mode = true
+button_mask = 7
+button_group = SubResource("ButtonGroup_trd5d")
+text = "1"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "2"
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "3"
+
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "4"
+
+[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "5"
+
+[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "6"
+
+[node name="Button7" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "7"
+
+[node name="Button8" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "8"
+
+[node name="Button9" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_trd5d")
+text = "9"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button9" to="." method="_on_button_9_pressed"]

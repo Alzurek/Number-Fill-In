@@ -1,0 +1,4 @@
+[gd_resource type="ButtonGroup" format=3 uid="uid://ceimatxb7gcsa"]
+
+[resource]
+resource_name = "Grid Size Button Group"

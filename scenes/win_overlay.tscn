@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://c05al5qjf7a41"]
+
+[ext_resource type="Script" path="res://scripts/win_overlay.gd" id="1_74ln6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvf0h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.0392157, 0.117647, 0.0980392, 0.6)
+skew = Vector2(0.15, 0.05)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.388235)
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="SystemFont" id="SystemFont_afke5"]
+font_names = PackedStringArray("LetterOMatic!")
+
+[sub_resource type="Theme" id="Theme_58ei2"]
+default_font = SubResource("SystemFont_afke5")
+Panel/styles/panel = SubResource("StyleBoxFlat_wvf0h")
+
+[node name="Win Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74ln6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 200.0
+offset_right = 610.0
+offset_bottom = 400.0
+theme = SubResource("Theme_58ei2")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 50
+text = "You Win!"
+
+[node name="Main Menu Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 130.0
+offset_right = 210.0
+offset_bottom = 175.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

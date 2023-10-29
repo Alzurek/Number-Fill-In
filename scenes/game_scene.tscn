@@ -1,0 +1,244 @@
+[gd_scene load_steps=56 format=3 uid="uid://b67u1ff7rig1g"]
+
+[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_qojco"]
+[ext_resource type="Script" path="res://scripts/grid_secondary_background.gd" id="2_s6gdb"]
+[ext_resource type="Script" path="res://scripts/board_background.gd" id="3_6k860"]
+[ext_resource type="Texture2D" uid="uid://os6gub33lxk8" path="res://assets/grid_cells/Grid Cell 0.png" id="3_hutpe"]
+[ext_resource type="PackedScene" uid="uid://ryi1s3cauypa" path="res://scenes/number_menu.tscn" id="3_sfkhl"]
+[ext_resource type="Script" path="res://scripts/number_list.gd" id="4_53hv2"]
+[ext_resource type="Texture2D" uid="uid://c6hd8wsym5j1u" path="res://assets/grid_cells/Grid Cell 1.png" id="4_deh4k"]
+[ext_resource type="PackedScene" uid="uid://c05al5qjf7a41" path="res://scenes/win_overlay.tscn" id="5_38kjr"]
+[ext_resource type="Script" path="res://scripts/win_view.gd" id="5_af3de"]
+[ext_resource type="Texture2D" uid="uid://bp46yroi46f0l" path="res://assets/grid_cells/Grid Cell.png" id="5_cwsaf"]
+[ext_resource type="Texture2D" uid="uid://dss88ynbvekv2" path="res://assets/grid_cells/Grid Cell Wall.png" id="6_vlpqm"]
+[ext_resource type="Texture2D" uid="uid://blvou3eitx7ol" path="res://assets/grid_cells/Default Grid Cell 0.png" id="7_xhdj2"]
+[ext_resource type="Texture2D" uid="uid://qdxvw545tfcp" path="res://assets/grid_cells/Grid Cell 2.png" id="7_yt6h8"]
+[ext_resource type="Texture2D" uid="uid://c1cjsspaetfic" path="res://assets/grid_cells/Default Grid Cell 1.png" id="8_fqfdj"]
+[ext_resource type="Texture2D" uid="uid://tkhhdgfcwcje" path="res://assets/grid_cells/Grid Cell 3.png" id="8_ovp8k"]
+[ext_resource type="Texture2D" uid="uid://dsu8166ay64oo" path="res://assets/grid_cells/Grid Cell 4.png" id="9_ad6kl"]
+[ext_resource type="Texture2D" uid="uid://bevno7unilcxy" path="res://assets/grid_cells/Default Grid Cell 2.png" id="9_jdu2w"]
+[ext_resource type="Texture2D" uid="uid://xl7q0olnohlt" path="res://assets/grid_cells/Grid Cell 5.png" id="10_3ffpy"]
+[ext_resource type="Texture2D" uid="uid://dmtdm3qm65flv" path="res://assets/grid_cells/Default Grid Cell 3.png" id="10_t206d"]
+[ext_resource type="Texture2D" uid="uid://dacg4wwla6hdf" path="res://assets/grid_cells/Grid Cell 6.png" id="11_ecnqp"]
+[ext_resource type="Texture2D" uid="uid://bk51bpepc4o6v" path="res://assets/grid_cells/Default Grid Cell 4.png" id="12_2p684"]
+[ext_resource type="Texture2D" uid="uid://bqbuwr0g545sk" path="res://assets/grid_cells/Grid Cell 7.png" id="12_ouba6"]
+[ext_resource type="Texture2D" uid="uid://dee88che23omn" path="res://assets/grid_cells/Default Grid Cell 5.png" id="13_iimsm"]
+[ext_resource type="Texture2D" uid="uid://cg572v3axx0kl" path="res://assets/grid_cells/Grid Cell 8.png" id="13_xga2o"]
+[ext_resource type="Texture2D" uid="uid://dx5jd1lkxnn35" path="res://assets/grid_cells/Grid Cell 9.png" id="14_a1nxx"]
+[ext_resource type="Texture2D" uid="uid://b2tsmk542psb3" path="res://assets/grid_cells/Default Grid Cell 6.png" id="14_mquon"]
+[ext_resource type="Texture2D" uid="uid://d3iqlywve3wlf" path="res://assets/grid_cells/Default Grid Cell 7.png" id="15_7jim2"]
+[ext_resource type="Texture2D" uid="uid://60jk7dget2x" path="res://assets/grid_cells/Default Grid Cell 8.png" id="16_6yd7h"]
+[ext_resource type="Texture2D" uid="uid://oxwbpygdy22j" path="res://assets/grid_cells/Default Grid Cell 9.png" id="17_144xo"]
+[ext_resource type="Script" path="res://scripts/game_board_grid.gd" id="24_w8611"]
+[ext_resource type="Script" path="res://scripts/number_selection_panel.gd" id="25_qxobn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ao3s"]
+blend_mode = 2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ep327"]
+texture = ExtResource("3_hutpe")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cip5l"]
+texture = ExtResource("4_deh4k")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axelw"]
+texture = ExtResource("7_xhdj2")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hsp07"]
+texture = ExtResource("8_fqfdj")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yt55"]
+texture = ExtResource("9_jdu2w")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4o2j"]
+texture = ExtResource("10_t206d")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqvs6"]
+texture = ExtResource("12_2p684")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwpnk"]
+texture = ExtResource("13_iimsm")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw5y2"]
+texture = ExtResource("14_mquon")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtlwf"]
+texture = ExtResource("15_7jim2")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpmud"]
+texture = ExtResource("16_6yd7h")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf5n6"]
+texture = ExtResource("17_144xo")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5xmc"]
+texture = ExtResource("7_yt6h8")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ck7sb"]
+texture = ExtResource("5_cwsaf")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtefb"]
+texture = ExtResource("6_vlpqm")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uno7p"]
+texture = ExtResource("8_ovp8k")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f38gh"]
+texture = ExtResource("9_ad6kl")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5k80q"]
+texture = ExtResource("10_3ffpy")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmvro"]
+texture = ExtResource("11_ecnqp")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fqrb"]
+texture = ExtResource("12_ouba6")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_md26s"]
+texture = ExtResource("13_xga2o")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xmck"]
+texture = ExtResource("14_a1nxx")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r6y33"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_ep327")
+sources/1 = SubResource("TileSetAtlasSource_cip5l")
+sources/2 = SubResource("TileSetAtlasSource_c5xmc")
+sources/3 = SubResource("TileSetAtlasSource_uno7p")
+sources/4 = SubResource("TileSetAtlasSource_f38gh")
+sources/5 = SubResource("TileSetAtlasSource_5k80q")
+sources/6 = SubResource("TileSetAtlasSource_vmvro")
+sources/7 = SubResource("TileSetAtlasSource_7fqrb")
+sources/8 = SubResource("TileSetAtlasSource_md26s")
+sources/9 = SubResource("TileSetAtlasSource_8xmck")
+sources/10 = SubResource("TileSetAtlasSource_axelw")
+sources/11 = SubResource("TileSetAtlasSource_hsp07")
+sources/12 = SubResource("TileSetAtlasSource_4yt55")
+sources/13 = SubResource("TileSetAtlasSource_f4o2j")
+sources/14 = SubResource("TileSetAtlasSource_kqvs6")
+sources/15 = SubResource("TileSetAtlasSource_kwpnk")
+sources/16 = SubResource("TileSetAtlasSource_kw5y2")
+sources/17 = SubResource("TileSetAtlasSource_dtlwf")
+sources/18 = SubResource("TileSetAtlasSource_qpmud")
+sources/19 = SubResource("TileSetAtlasSource_nf5n6")
+sources/20 = SubResource("TileSetAtlasSource_ck7sb")
+sources/21 = SubResource("TileSetAtlasSource_vtefb")
+
+[node name="Game Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qojco")
+
+[node name="Grid Secondary Background" type="Polygon2D" parent="."]
+position = Vector2(50, 50)
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+polygon = PackedVector2Array(0, 0, 0, 510, 510, 510, 510, 0)
+script = ExtResource("2_s6gdb")
+
+[node name="Game Canvas" type="CanvasGroup" parent="."]
+
+[node name="Board Background" type="Polygon2D" parent="Game Canvas"]
+position = Vector2(50, 50)
+polygon = PackedVector2Array(0, 0, 0, 510, 510, 510, 510, 0)
+script = ExtResource("3_6k860")
+
+[node name="Game Board Grid" type="TileMap" parent="Game Canvas"]
+material = SubResource("CanvasItemMaterial_7ao3s")
+position = Vector2(50, 50)
+tile_set = SubResource("TileSet_r6y33")
+cell_quadrant_size = 32
+format = 2
+script = ExtResource("24_w8611")
+
+[node name="Number Selection Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 0
+offset_left = 68.0
+offset_top = 560.0
+offset_right = 543.0
+offset_bottom = 625.0
+script = ExtResource("25_qxobn")
+
+[node name="Number Selection Menu" parent="Number Selection Panel" instance=ExtResource("3_sfkhl")]
+layout_mode = 1
+offset_left = -73.0
+offset_top = -11.0
+offset_right = -515.0
+offset_bottom = -75.9998
+scale = Vector2(0.85, 0.85)
+
+[node name="Number List" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 51.0
+offset_right = 817.0
+offset_bottom = 561.0
+script = ExtResource("4_53hv2")
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 592.0
+offset_right = 878.0
+offset_bottom = 636.0
+text = "Back"
+
+[node name="Win View" type="Node2D" parent="."]
+position = Vector2(0, 650)
+script = ExtResource("5_af3de")
+
+[node name="Win Overlay" parent="Win View" instance=ExtResource("5_38kjr")]
+z_index = 10
+
+[connection signal="item_selected" from="Number List" to="Number List" method="_on_item_selected"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

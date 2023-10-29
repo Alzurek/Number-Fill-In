@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://beug175dlqfnu"]
+
+[node name="Game Cell" type="Node2D"]
+
+[node name="Border" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
+
+[node name="Cell" type="Polygon2D" parent="."]
+position = Vector2(1, 1)
+polygon = PackedVector2Array(0, 0, 0, 48, 48, 48, 48, 0)
+
+[node name="Text" type="Label" parent="Cell"]
+offset_right = 48.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.137255, 0.372549, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1

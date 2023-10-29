@@ -1,0 +1,339 @@
+[gd_scene load_steps=6 format=3 uid="uid://b12qoc0ooov3k"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_khbwl"]
+[ext_resource type="Script" path="res://scripts/color_section.gd" id="2_kbm2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyfc3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_6tttm"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_wyfc3")
+
+[sub_resource type="Theme" id="Theme_wso1c"]
+
+[node name="Settings Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_khbwl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 150.0
+offset_right = 877.0
+offset_bottom = 575.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Color Section" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(611, 300)
+layout_mode = 2
+script = ExtResource("2_kbm2q")
+
+[node name="Colors Section Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 600.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
+text = "Colors"
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/Color Section"]
+custom_minimum_size = Vector2(600, 20)
+layout_mode = 2
+offset_top = 53.0
+offset_right = 600.0
+offset_bottom = 73.0
+
+[node name="Color Options" type="Control" parent="ScrollContainer/VBoxContainer/Color Section"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 77.0
+offset_right = 600.0
+offset_bottom = 77.0
+
+[node name="Background Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 600.0
+offset_bottom = 42.0
+size_flags_horizontal = 9
+dragger_visibility = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/HSplitContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = " Background"
+
+[node name="Reset Background" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/HSplitContainer"]
+custom_minimum_size = Vector2(104, 0)
+layout_mode = 2
+text = "reset"
+
+[node name="Background Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Background Accent Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
+layout_mode = 2
+offset_top = 46.0
+offset_right = 600.0
+offset_bottom = 84.0
+size_flags_horizontal = 9
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/HSplitContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = " Background Accent"
+
+[node name="Reset Background Accent" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/HSplitContainer"]
+custom_minimum_size = Vector2(104, 0)
+layout_mode = 2
+text = "reset"
+
+[node name="Background Accent Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Grid Primary Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
+layout_mode = 2
+offset_top = 88.0
+offset_right = 600.0
+offset_bottom = 126.0
+size_flags_horizontal = 9
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/HSplitContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tttm")
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme = SubResource("Theme_wso1c")
+theme_override_font_sizes/font_size = 25
+text = " Grid Primary"
+
+[node name="Reset Grid Primary" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/HSplitContainer"]
+custom_minimum_size = Vector2(104, 0)
+layout_mode = 2
+text = "reset"
+
+[node name="Grid Primary Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Grid Secondary Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
+layout_mode = 2
+offset_top = 130.0
+offset_right = 600.0
+offset_bottom = 168.0
+size_flags_horizontal = 9
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer"]
+layout_mode = 2
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tttm")
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme = SubResource("Theme_wso1c")
+theme_override_font_sizes/font_size = 25
+text = " Grid Secondary"
+
+[node name="Auto Grid Secondary" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "auto"
+
+[node name="Reset Grid Secondary" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer"]
+layout_mode = 2
+text = "reset"
+
+[node name="Grid Secondary Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Grid Accent Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
+layout_mode = 2
+offset_top = 172.0
+offset_right = 600.0
+offset_bottom = 210.0
+size_flags_horizontal = 9
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/HSplitContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tttm")
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme = SubResource("Theme_wso1c")
+theme_override_font_sizes/font_size = 25
+text = " Grid Accent"
+
+[node name="Reset Grid Accent" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/HSplitContainer"]
+custom_minimum_size = Vector2(104, 0)
+layout_mode = 2
+text = "reset"
+
+[node name="Grid Accent Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Audio Section" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(611, 250)
+layout_mode = 2
+
+[node name="Colors Section Title" type="Label" parent="ScrollContainer/VBoxContainer/Audio Section"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 600.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
+text = "Audio"
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/Audio Section"]
+custom_minimum_size = Vector2(600, 20)
+layout_mode = 0
+offset_top = 53.0
+offset_right = 600.0
+offset_bottom = 73.0
+
+[node name="Color Options" type="Control" parent="ScrollContainer/VBoxContainer/Audio Section"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 77.0
+offset_right = 600.0
+offset_bottom = 77.0
+
+[node name="Master Volume" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Master Volume"]
+layout_mode = 2
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Master Volume/HSplitContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Master Volume/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = " Master Volume"
+
+[node name="Reset Master Volume" type="Button" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Master Volume/HSplitContainer"]
+layout_mode = 2
+text = "reset"
+
+[node name="HSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Master Volume"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Music Volume" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options"]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 592.0
+offset_bottom = 86.0
+size_flags_horizontal = 9
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Music Volume"]
+layout_mode = 2
+
+[node name="Title Backgound" type="PanelContainer" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Music Volume/HSplitContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Music Volume/HSplitContainer/Title Backgound"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = " Music Volume"
+
+[node name="Reset Music Volume" type="Button" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Music Volume/HSplitContainer"]
+layout_mode = 2
+text = "reset"
+
+[node name="HSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/Audio Section/Color Options/Music Volume"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Difficulty Options" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 266.0
+offset_top = 150.0
+offset_right = 731.0
+offset_bottom = 580.0
+
+[node name="Container" type="HFlowContainer" parent="Difficulty Options"]
+layout_mode = 2
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 592.0
+offset_right = 878.0
+offset_bottom = 636.0
+text = "Back"
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/HSplitContainer/Reset Background" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_background_pressed"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Background Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/HSplitContainer/Reset Background Accent" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_background_accent_pressed"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/Background Accent Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_accent_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/HSplitContainer/Reset Grid Primary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_primary_pressed"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/Grid Primary Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_primary_color_picker_color_changed"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/HSplitContainer/Auto Grid Secondary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_auto_grid_secondary_toggled"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/Reset Grid Secondary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_secondary_pressed"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/Grid Secondary Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_secondary_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/HSplitContainer/Reset Grid Accent" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_accent_pressed"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/Grid Accent Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_accent_color_picker_color_changed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

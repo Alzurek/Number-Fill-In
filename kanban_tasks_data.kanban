@@ -1,0 +1,281 @@
+{
+	"categories": [
+		{
+			"uuid": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"title": "Task",
+			"color": "70bafa"
+		},
+		{
+			"uuid": "f1cd6aed-4cfc-438f-b1b0-088f26d8d501",
+			"title": "Bug",
+			"color": "a94d35"
+		},
+		{
+			"uuid": "d235da36-8e93-4e9f-a3eb-2bee72bfca4c",
+			"title": "DevOps",
+			"color": "dbe127"
+		},
+		{
+			"uuid": "12bce48d-0701-4429-8165-940d8e434f20",
+			"title": "Epic",
+			"color": "8e2ada"
+		},
+		{
+			"uuid": "0ec6292d-217c-49d4-a8f4-94fd722aa0be",
+			"title": "Ideas",
+			"color": "6dda0d"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "010116dc-22a3-4018-9dc5-a5c24a10191d",
+			"title": "Todo",
+			"tasks": [
+				"fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de",
+				"b59e57a6-8600-4491-99d5-6b3ea5ca199f",
+				"d267b38b-c87f-43ef-93a7-03e914abe345",
+				"55735c7d-e40c-4b5a-949a-52678ad92d77",
+				"cf87de53-802c-4c56-9d93-ab09454451ec",
+				"83836cfa-dfbf-47fd-80c4-0ba1f045b925",
+				"810fe035-0618-4141-afc7-5b0c25b222aa",
+				"e7b5b26f-123f-446d-a8b6-18a1812a6233",
+				"720d0070-4f42-4bcd-92fb-2949c4762527",
+				"fd65aafe-1870-4a2b-9e2e-b6097378c42f",
+				"fef15b85-53d9-4ffa-890f-c292500eaebf"
+			]
+		},
+		{
+			"uuid": "e7f9f743-0664-4159-b0cb-7c770cd7ba5d",
+			"title": "Doing",
+			"tasks": [
+				"ea318952-2b87-4179-9e7f-975303d5d7b7"
+			]
+		},
+		{
+			"uuid": "635b887b-8942-48b7-aa83-8359db46b580",
+			"title": "Done",
+			"tasks": [
+				"ef70d715-2697-42fb-854a-cc905071f450",
+				"d3aabc40-8907-428e-80bd-22a63d5357ac",
+				"c7c3b34a-b407-459b-8fb4-9a49c318ff6b",
+				"d76e5446-f174-4e08-b9ea-fba754efab61",
+				"8f8447bc-097a-4588-a0d6-7c700ba4255c",
+				"ff8861d6-b3e2-4762-90ed-a740b5d893b7"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de",
+			"title": "Investigate Android / IOS Integration",
+			"description": "",
+			"category": "d235da36-8e93-4e9f-a3eb-2bee72bfca4c",
+			"steps": []
+		},
+		{
+			"uuid": "55735c7d-e40c-4b5a-949a-52678ad92d77",
+			"title": "Implement window scalability",
+			"description": "",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": [
+				{
+					"details": "Mobile Phone Scalability",
+					"done": false
+				},
+				{
+					"details": "Tablet Scalability",
+					"done": false
+				},
+				{
+					"details": "PC Scalability",
+					"done": false
+				},
+				{
+					"details": "Active Resizing",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "cf87de53-802c-4c56-9d93-ab09454451ec",
+			"title": "Implement on-screen controller buttons",
+			"description": "",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": [
+				{
+					"details": "Grid Indicator",
+					"done": false
+				},
+				{
+					"details": "Toggle button to switch modes",
+					"done": false
+				},
+				{
+					"details": "Controller",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "b59e57a6-8600-4491-99d5-6b3ea5ca199f",
+			"title": "Implement Ads",
+			"description": "MONEY MONEY MONEY",
+			"category": "d235da36-8e93-4e9f-a3eb-2bee72bfca4c",
+			"steps": []
+		},
+		{
+			"uuid": "ff8861d6-b3e2-4762-90ed-a740b5d893b7",
+			"title": "Game Theme and custom colors",
+			"description": "",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "ef70d715-2697-42fb-854a-cc905071f450",
+			"title": "Grid Generation",
+			"description": "",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": []
+		},
+		{
+			"uuid": "d3aabc40-8907-428e-80bd-22a63d5357ac",
+			"title": "Grid Translation / Aquisition",
+			"description": "",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": []
+		},
+		{
+			"uuid": "810fe035-0618-4141-afc7-5b0c25b222aa",
+			"title": "Better grid tiling to allow for custom number colors",
+			"description": "Currently, the tiles being used for the grid numbers are hard coded as specific png's. Determine a more generic way to supply these numbers to allow for at least the ability to change the color, ideally the font could also be changed.",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "c7c3b34a-b407-459b-8fb4-9a49c318ff6b",
+			"title": "Basic win conditions",
+			"description": "",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "d76e5446-f174-4e08-b9ea-fba754efab61",
+			"title": "Basic Navigation",
+			"description": "",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "8f8447bc-097a-4588-a0d6-7c700ba4255c",
+			"title": "Difficulty Menu",
+			"description": "",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": [
+				{
+					"details": "Grid size selection",
+					"done": true
+				},
+				{
+					"details": "Hint amount selection",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "e7b5b26f-123f-446d-a8b6-18a1812a6233",
+			"title": "Design a better custom theme",
+			"description": "Perhaps get Lem to help with designing a theme that uses some custom assets rather than just basic nodes with minimal time put into aesthetics",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "d267b38b-c87f-43ef-93a7-03e914abe345",
+			"title": "Settings Menu",
+			"description": "Settings for:\n\tColors\n\t\t- Backgound Color\n\t\t- Background Accent Color\n\t\t- Theme Primary Color\n\t\t- Theme Secondary Color\n\t\t- Theme Accent Color\n\n\tAudio\n\t\t- Music Volume\n\t\t- Sound effects\n\n\tVideo\n\t\t- (PC only) Full screen\n\t\t- (PC only) Resolution\n\n\tGameplay\n\t\t- Gamepad button assignment",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": [
+				{
+					"details": "Colors",
+					"done": true
+				},
+				{
+					"details": "Audio",
+					"done": true
+				},
+				{
+					"details": "Video",
+					"done": false
+				},
+				{
+					"details": "Gameplay",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "720d0070-4f42-4bcd-92fb-2949c4762527",
+			"title": "Add Math as number list hints",
+			"description": "Like in crossword puzzles, use math equations as hints for the user so the numbers aren't readily available. \nDifficulty options for these settings can include both how often hints show up in the list, as well as the difficulty of these hints, ranging from addition to calculus or potentially even just references to times \n\n\tTime Periods\n\t\t- WWII ended -> 1945\n\t\t- What is Pi? -> 3.141592....\n\tMath\n\t\t- Addition / Subtraction\n\t\t- Multiplication / Division*\n\t\t- Exponents*\n\t\t- CALcuLUs*\n\t\t* - Rule: Decimals will be irrelevant on the board (if starts with 0, then uses that 0)\n\t\t* - So when calculating a number like 0019, consider it like 0.019 and go from there\n\t\t* - Similarly, if a number comes up as 1000 with many trailing zero's, a rule is in place that you just pad with extra zeros until you reach the digit count.\n\t\t*\t- Alternatively make it so the equation results in something similar to 100.092 where the rule for cutting off trailing numbers past the digits length will come into place\n",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "83836cfa-dfbf-47fd-80c4-0ba1f045b925",
+			"title": "Scoring",
+			"description": "Implement scoring in such a way that difficulty acts as multipliers on score, and the shorter amount of time you take doing the grid, the higher your score becomes (likely divide by a factor of time).\n\nUsing hints will reduce score.\n\n\tTime\n\t\tFactor in which to divide the overall score\n\tPoints\n\t\tFlat rate?\n\t\t- Hint multiplier\t\t\t\t\t-\tSignificant boosts\n\t\t- Grid Size multiplier\t\t\t-\tDecent boosts\n\t\t- Difficulty multiplier\t\t\t-\tSmall boosts\n\t\n<flat_rate> * <multiplier> / <time_factor>  ???   Any other numbers / constant stuffs?",
+			"category": "12bce48d-0701-4429-8165-940d8e434f20",
+			"steps": []
+		},
+		{
+			"uuid": "ea318952-2b87-4179-9e7f-975303d5d7b7",
+			"title": "Get Firebase working",
+			"description": "First, just try to get remote config working, after that, move onto database and user management (will need something to handle users, hopefully firebase will be enough)\n\nIf time is available, consider crashlytics",
+			"category": "d235da36-8e93-4e9f-a3eb-2bee72bfca4c",
+			"steps": [
+				{
+					"details": "Remote Config\n\n(Currently Unsupported)",
+					"done": false
+				},
+				{
+					"details": "Database",
+					"done": false
+				},
+				{
+					"details": "Users",
+					"done": false
+				},
+				{
+					"details": "Crashlytics",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "fd65aafe-1870-4a2b-9e2e-b6097378c42f",
+			"title": "Sharable Player Themes",
+			"description": "",
+			"category": "0ec6292d-217c-49d4-a8f4-94fd722aa0be",
+			"steps": []
+		},
+		{
+			"uuid": "fef15b85-53d9-4ffa-890f-c292500eaebf",
+			"title": "Daily Puzzle",
+			"description": "",
+			"category": "0ec6292d-217c-49d4-a8f4-94fd722aa0be",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"010116dc-22a3-4018-9dc5-a5c24a10191d"
+			],
+			[
+				"e7f9f743-0664-4159-b0cb-7c770cd7ba5d"
+			],
+			[
+				"635b887b-8942-48b7-aa83-8359db46b580"
+			]
+		]
+	}
+}

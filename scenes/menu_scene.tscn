@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://c32ofu1t18tej"]
+
+[ext_resource type="Script" path="res://scripts/menu_scene.gd" id="1_tbig7"]
+[ext_resource type="Theme" uid="uid://clmxad0k6mw15" path="res://themes/button_theme.tres" id="2_2sneo"]
+
+[node name="Menu Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbig7")
+
+[node name="Main Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 200.0
+offset_right = 387.0
+offset_bottom = 520.0
+
+[node name="Start" type="Button" parent="Main Menu"]
+layout_mode = 2
+theme = ExtResource("2_2sneo")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Difficulty" type="Button" parent="Main Menu"]
+layout_mode = 2
+theme = ExtResource("2_2sneo")
+theme_override_font_sizes/font_size = 50
+text = " Difficulty "
+
+[node name="Settings" type="Button" parent="Main Menu"]
+layout_mode = 2
+theme = ExtResource("2_2sneo")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Main Menu"]
+layout_mode = 2
+theme = ExtResource("2_2sneo")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="Main Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main Menu/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/Quit" to="." method="_on_quit_pressed"]

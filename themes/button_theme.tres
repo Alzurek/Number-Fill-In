@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://clmxad0k6mw15"]
+
+[ext_resource type="StyleBox" uid="uid://b5i6rwo4sqvux" path="res://styles/button_style_hover.tres" id="1_uddon"]
+[ext_resource type="StyleBox" uid="uid://d3kc1itlkatbg" path="res://styles/button_style_normal.tres" id="2_v0ypj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifwww"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.537255)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex05l"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.92549)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_ifwww")
+Button/styles/hover = ExtResource("1_uddon")
+Button/styles/normal = ExtResource("2_v0ypj")
+Button/styles/pressed = SubResource("StyleBoxFlat_ex05l")

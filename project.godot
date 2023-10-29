@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Number Fill In"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GameRepo="*res://repository/game_database.gd"
+GameConstants="*res://scripts/constants/game_constants.gd"
+SceneConstants="*res://scripts/constants/scene_constants.gd"
+GameVariables="*res://scripts/global_variables/game_variables.gd"
+UserVariables="*res://scripts/global_variables/user_variables.gd"
+GameService="*res://scripts/service/game_service.gd"
+GridSizeService="*res://scripts/service/grid_size_service.gd"
+MainService="*res://scripts/service/main_service.gd"
+MathService="*res://scripts/service/math_service.gd"
+ScenePhysics="*res://scripts/scene_physics.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+
+[display]
+
+window/size/viewport_width=900
+window/size/viewport_height=650
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(1000, 1000)
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ColorPreview/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/bloody_logger/plugin.cfg", "res://addons/copilot/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
