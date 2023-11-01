@@ -1,6 +1,8 @@
 extends Node
 
 
+var currentUser : User
+
 const defaultBackgroundThemeColor = Color("#141414")
 const defaultBackgroundAccentColor = Color("#1312f554")
 const defaultGridPrimaryColor = Color(1, 1, 1)

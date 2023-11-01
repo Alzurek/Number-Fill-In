@@ -28,10 +28,7 @@ func toggleButtons():
 
 
 func _on_start_pressed():
-	var tween = create_tween()
-	var newPosition = Vector2(-500, 0)
 	GameVariables.currentScreen = GameConstants.GAME_SCREEN
-	tween.tween_property(self, "position", newPosition, duration)
 	currentState = OFF_SCREEN
 
 

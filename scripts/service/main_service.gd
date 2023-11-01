@@ -22,6 +22,9 @@ func updateBackgroundAccentColors():
 		Color.TRANSPARENT,
 		UserVariables.backgroundAccentColor
 	])
+	
+	#var userInfoBar = get_node(('/root/Main/User Info/Username Bar')) as Panel
+	# Todo color the borders of the username area.
 
 
 func updateGridPrimaryColors():

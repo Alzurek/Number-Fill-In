@@ -147,7 +147,7 @@
 		{
 			"uuid": "810fe035-0618-4141-afc7-5b0c25b222aa",
 			"title": "Better grid tiling to allow for custom number colors",
-			"description": "Currently, the tiles being used for the grid numbers are hard coded as specific png's. Determine a more generic way to supply these numbers to allow for at least the ability to change the color, ideally the font could also be changed.",
+			"description": "Currently, the tiles being used for the grid numbers are hard coded as specific png's. Determine a more generic way to supply these numbers to allow for at least the ability to change the color, ideally the font could also be changed.\n\n\n\n> This is semi-implemented. The mask used by the tile grid is allowing the outlines and number colors to be the GridSecondaryColor. \n> Even better would be for the grid and numbers to have different colors\n> Even even better would be to go back to how it was originally, default numbers are a separate color than placed colors\n\t\t-> Potential solution for this could be that the added numbers are even simply added to a completely separate tilegrid. It is allowed to overwrite numbers, so the check for valid placement can remain the same on the old tilegrid, but when adding user tiles, it's to a grid on top of those other parts. If this was done, then the all of what happens now will remain the same, background and grid line colors can change, the default numbers will be the same as the grid lines, and then the player either places white or black numbers depending on the brightness of their grind (for contrast reasons)",
 			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
 			"steps": []
 		},

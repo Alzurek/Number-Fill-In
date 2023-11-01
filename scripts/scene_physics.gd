@@ -12,11 +12,11 @@ func moveScene(scene, newPosition):
 func canSceneMove(inViewport, screens, inWindowPosition, outofWindowPosition):
 	var newPosition = null
 	if !inViewport:
-		if 	screens.has(GameVariables.currentScreen):
+		if 	screens == GameVariables.currentScreen:
 			# move into viewport, it is not in viewport but should be
 			newPosition = inWindowPosition
 	else:
-		if !screens.has(GameVariables.currentScreen):
+		if screens != GameVariables.currentScreen:
 			# move out of viewport, it is in viewport but should not be
 			newPosition = outofWindowPosition
 	return newPosition

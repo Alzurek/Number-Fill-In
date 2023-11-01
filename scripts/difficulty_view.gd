@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var newPosition = ScenePhysics.canSceneMove(inViewport, [GameConstants.DIFFICULTY_MENU], Vector2(0, 0), Vector2(0, -700))
+	var newPosition = ScenePhysics.canSceneMove(inViewport, GameConstants.DIFFICULTY_MENU, Vector2(0, 0), Vector2(0, -700))
 	if newPosition != null:
 		ScenePhysics.moveScene(self, newPosition)
 		inViewport = !inViewport

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfqsbqqova5as"]
+[gd_scene load_steps=13 format=3 uid="uid://dfqsbqqova5as"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_20syi"]
 [ext_resource type="Script" path="res://scripts/menu_view.gd" id="3_5xw4r"]
@@ -7,7 +7,29 @@
 [ext_resource type="Script" path="res://scripts/difficulty_view.gd" id="5_51p8g"]
 [ext_resource type="PackedScene" uid="uid://bu1pfbx2t5iu5" path="res://scenes/difficulty_scene.tscn" id="7_18deh"]
 [ext_resource type="Script" path="res://scripts/settings_view.gd" id="8_1mku3"]
+[ext_resource type="Script" path="res://scripts/login_view.gd" id="9_15n1m"]
 [ext_resource type="PackedScene" uid="uid://b12qoc0ooov3k" path="res://scenes/settings_menu.tscn" id="9_ujeu4"]
+[ext_resource type="Script" path="res://scripts/user_info.gd" id="10_68gfl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h7yy"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_right = 30
+corner_radius_bottom_right = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guvt1"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Main" type="Node"]
 script = ExtResource("1_20syi")
@@ -54,3 +76,43 @@ position = Vector2(900, 0)
 script = ExtResource("8_1mku3")
 
 [node name="Settings Menu" parent="Settings View" instance=ExtResource("9_ujeu4")]
+
+[node name="Login View" type="Node2D" parent="."]
+position = Vector2(0, 650)
+script = ExtResource("9_15n1m")
+
+[node name="User Info" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 387.0
+offset_bottom = 79.0
+script = ExtResource("10_68gfl")
+
+[node name="Username Bar" type="Panel" parent="User Info"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 23.0
+offset_right = 340.0
+offset_bottom = 47.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4h7yy")
+
+[node name="User Profile" type="Panel" parent="User Info"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_guvt1")
+
+[node name="Username" type="Label" parent="User Info"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 23.0
+offset_right = 243.0
+offset_bottom = 49.0
+vertical_alignment = 1
+text_overrun_behavior = 3
+max_lines_visible = 1

@@ -4,8 +4,8 @@ extends Node2D
 var gameScene = preload("res://scenes/game_scene.tscn")
 var gameInstances = 0
 var timeSinceMove = 0
-var inViewport = false
 var closedGameTimer = false
+var inViewport = false
 var currentScene = null
 
 
@@ -17,8 +17,10 @@ func _process(_delta):
 		closedGameTimer = false
 		remove_child(currentScene)
 		currentScene = null
-	var screens = [GameConstants.GAME_SCREEN, GameConstants.WIN_VIEW]
-	var newPosition = ScenePhysics.canSceneMove(inViewport, screens, Vector2(0, 0), Vector2(0, 650))
+	# TODO Might need to redo Win View movement
+	# var screens = [GameConstants.GAME_SCREEN, GameConstants.WIN_VIEW]
+	
+	var newPosition = ScenePhysics.canSceneMove(inViewport, GameConstants.GAME_SCREEN, Vector2(0, 0), Vector2(0, 650))
 	if newPosition != null:
 		ScenePhysics.moveScene(self, newPosition)
 		if gameInstances == 0:
