@@ -31,8 +31,8 @@
 			"uuid": "010116dc-22a3-4018-9dc5-a5c24a10191d",
 			"title": "Todo",
 			"tasks": [
-				"fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de",
 				"b59e57a6-8600-4491-99d5-6b3ea5ca199f",
+				"ea318952-2b87-4179-9e7f-975303d5d7b7",
 				"d267b38b-c87f-43ef-93a7-03e914abe345",
 				"55735c7d-e40c-4b5a-949a-52678ad92d77",
 				"cf87de53-802c-4c56-9d93-ab09454451ec",
@@ -48,7 +48,8 @@
 			"uuid": "e7f9f743-0664-4159-b0cb-7c770cd7ba5d",
 			"title": "Doing",
 			"tasks": [
-				"ea318952-2b87-4179-9e7f-975303d5d7b7"
+				"3fb85fec-8d0e-4e52-9ca9-1fb0d5247713",
+				"fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de"
 			]
 		},
 		{
@@ -70,7 +71,16 @@
 			"title": "Investigate Android / IOS Integration",
 			"description": "",
 			"category": "d235da36-8e93-4e9f-a3eb-2bee72bfca4c",
-			"steps": []
+			"steps": [
+				{
+					"details": "Android",
+					"done": false
+				},
+				{
+					"details": "iOS",
+					"done": false
+				}
+			]
 		},
 		{
 			"uuid": "55735c7d-e40c-4b5a-949a-52678ad92d77",
@@ -238,11 +248,11 @@
 				},
 				{
 					"details": "Database",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Users",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Crashlytics",
@@ -262,6 +272,13 @@
 			"title": "Daily Puzzle",
 			"description": "",
 			"category": "0ec6292d-217c-49d4-a8f4-94fd722aa0be",
+			"steps": []
+		},
+		{
+			"uuid": "3fb85fec-8d0e-4e52-9ca9-1fb0d5247713",
+			"title": "Fix Broken Settings",
+			"description": "Once getting the app onto a phone, it was discovered that the Color Picker Button node also opens a keyboard when opened and from my searching I cannot find any option to turn this off or even hack it to be invisible (at least through attempts)\n\nCreate a new flow for updating colors such that the keyboard never comes up unless desired (when selecting text inputs). \n\nCurrently a new implementation is working with initial color assigning (minus alpha) and working color assigning (minus updating of the color boxes)\n\nFix these minor issues.",
+			"category": "f1cd6aed-4cfc-438f-b1b0-088f26d8d501",
 			"steps": []
 		}
 	],

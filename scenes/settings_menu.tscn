@@ -1,7 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b12qoc0ooov3k"]
+[gd_scene load_steps=19 format=3 uid="uid://b12qoc0ooov3k"]
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_khbwl"]
 [ext_resource type="Script" path="res://scripts/color_section.gd" id="2_kbm2q"]
+[ext_resource type="StyleBox" uid="uid://bfge8iwqviqce" path="res://themes/background_color_theme.tres" id="3_7f1vq"]
+[ext_resource type="Texture2D" uid="uid://dpeuey6kv5koq" path="res://assets/transp_bg.ctex" id="3_db4jk"]
+[ext_resource type="StyleBox" uid="uid://dxtvms6k1otkr" path="res://themes/background_accent_color_theme.tres" id="4_10r1w"]
+[ext_resource type="StyleBox" uid="uid://clefuh5yhjcvb" path="res://themes/grid_primary_color_theme.tres" id="5_uaiid"]
+[ext_resource type="StyleBox" uid="uid://x7dqistmd0wr" path="res://themes/grid_secondary_color_theme.tres" id="6_jxb6f"]
+[ext_resource type="StyleBox" uid="uid://dcpd61csps50a" path="res://themes/grid_accent_color_theme.tres" id="7_wq4nj"]
+[ext_resource type="Script" path="res://scripts/panel_container.gd" id="9_kjioj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4owkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbdws"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyfc3"]
 content_margin_left = 0.0
@@ -19,6 +30,24 @@ corner_detail = 5
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_wyfc3")
 
 [sub_resource type="Theme" id="Theme_wso1c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4868"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toor3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bjtl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn14g"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
 
 [node name="Settings Menu" type="Control"]
 layout_mode = 3
@@ -94,9 +123,28 @@ custom_minimum_size = Vector2(104, 0)
 layout_mode = 2
 text = "reset"
 
-[node name="Background Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 36.0
+texture = ExtResource("3_db4jk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Color Display" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Control"]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("3_7f1vq")
+theme_override_styles/hover = ExtResource("3_7f1vq")
+theme_override_styles/pressed = ExtResource("3_7f1vq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4owkl")
+theme_override_styles/focus = ExtResource("3_7f1vq")
 
 [node name="Background Accent Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
 layout_mode = 2
@@ -123,9 +171,27 @@ custom_minimum_size = Vector2(104, 0)
 layout_mode = 2
 text = "reset"
 
-[node name="Background Accent Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/Control"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 36.0
+texture = ExtResource("3_db4jk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Color Display" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/Control"]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("4_10r1w")
+theme_override_styles/hover = ExtResource("4_10r1w")
+theme_override_styles/pressed = ExtResource("4_10r1w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bbdws")
+theme_override_styles/focus = ExtResource("4_10r1w")
 
 [node name="Grid Primary Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
 layout_mode = 2
@@ -154,9 +220,28 @@ custom_minimum_size = Vector2(104, 0)
 layout_mode = 2
 text = "reset"
 
-[node name="Grid Primary Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/Control"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 36.0
+texture = ExtResource("3_db4jk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Color Display" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/Control"]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("5_uaiid")
+theme_override_styles/hover = ExtResource("5_uaiid")
+theme_override_styles/pressed = ExtResource("5_uaiid")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q4868")
+theme_override_styles/focus = ExtResource("5_uaiid")
 
 [node name="Grid Secondary Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
 layout_mode = 2
@@ -192,9 +277,28 @@ text = "auto"
 layout_mode = 2
 text = "reset"
 
-[node name="Grid Secondary Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/Control"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 36.0
+texture = ExtResource("3_db4jk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Color Display" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/Control"]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("6_jxb6f")
+theme_override_styles/hover = ExtResource("6_jxb6f")
+theme_override_styles/pressed = ExtResource("6_jxb6f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_toor3")
+theme_override_styles/focus = ExtResource("6_jxb6f")
 
 [node name="Grid Accent Color" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/Color Section/Color Options"]
 layout_mode = 2
@@ -223,9 +327,28 @@ custom_minimum_size = Vector2(104, 0)
 layout_mode = 2
 text = "reset"
 
-[node name="Grid Accent Color Picker" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/Control"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 36.0
+texture = ExtResource("3_db4jk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Color Display" type="Button" parent="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/Control"]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("7_wq4nj")
+theme_override_styles/hover = ExtResource("7_wq4nj")
+theme_override_styles/pressed = ExtResource("7_wq4nj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2bjtl")
+theme_override_styles/focus = ExtResource("7_wq4nj")
 
 [node name="Audio Section" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(611, 250)
@@ -325,15 +448,52 @@ offset_right = 878.0
 offset_bottom = 636.0
 text = "Back"
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 2
+offset_left = 550.0
+offset_top = 80.0
+offset_right = 852.0
+offset_bottom = 711.0
+scale = Vector2(0.75, 0.75)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn14g")
+script = ExtResource("9_kjioj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ColorPicker" type="ColorPicker" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="Set Color" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Confirm"
+
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/HSplitContainer/Reset Background" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_background_pressed"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Background Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Control/Color Display" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_color_display_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/HSplitContainer/Reset Background Accent" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_background_accent_pressed"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/Background Accent Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_accent_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Background Accent Color/Control/Color Display" to="ScrollContainer/VBoxContainer/Color Section" method="_on_background_accent_color_display_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/HSplitContainer/Reset Grid Primary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_primary_pressed"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/Grid Primary Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_primary_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Primary Color/Control/Color Display" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_primary_color_display_pressed"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/HSplitContainer/Auto Grid Secondary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_auto_grid_secondary_toggled"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/HSplitContainer/Reset Grid Secondary" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_secondary_pressed"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/Grid Secondary Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_secondary_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Secondary Color/Control/Color Display" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_secondary_color_display_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/HSplitContainer/Reset Grid Accent" to="ScrollContainer/VBoxContainer/Color Section" method="_on_reset_grid_accent_pressed"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/Grid Accent Color Picker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_accent_color_picker_color_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Color Section/Color Options/Grid Accent Color/Control/Color Display" to="ScrollContainer/VBoxContainer/Color Section" method="_on_grid_accent_color_display_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="visibility_changed" from="PanelContainer" to="PanelContainer" method="_on_visibility_changed"]
+[connection signal="color_changed" from="PanelContainer/VBoxContainer/MarginContainer/ColorPicker" to="ScrollContainer/VBoxContainer/Color Section" method="_on_color_picker_color_changed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer2/Set Color" to="ScrollContainer/VBoxContainer/Color Section" method="_on_set_color_pressed"]

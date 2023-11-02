@@ -39,9 +39,17 @@ func updateGridAccentColors():
 	pass
 
 
+func updateColorPickerButton(container : String, theme : String, color : Color):
+	var colorPicker = get_node("/root/SettingsScene/ScrollContainer/VBoxContainer/Color Section/Color Options/" + container + "/Color Display") as Button
+						#	   'ScrollContainer/VBoxContainer/Color Section/Color Options/Background Color/Color Display'
+	var buttonTheme = colorPicker.get_theme_stylebox(theme) as StyleBox
+	buttonTheme.bg_color = color
+	colorPicker.remove_theme_stylebox_override(theme)
+	colorPicker.add_theme_stylebox_override(theme, buttonTheme)
+	
+	
 func updateGridColors():
 	var boardBackground = get_node('/root/GameScene/Game Canvas/Board Background') as Polygon2D
 	boardBackground.color = UserVariables.gridPrimaryColor
 	var boardSecondary = get_node('/root/GameScene/Grid Secondary Background') as Polygon2D
 	boardSecondary.color = UserVariables.gridSecondaryColor
-
