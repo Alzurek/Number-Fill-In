@@ -13,30 +13,52 @@ var loginScene
 var email
 var password
 
+
+func setSignals():
+	Firebase.Auth.login_failed.connect(loginFailed)
+	Firebase.Auth.login_succeeded.connect(loginSuccess)
+	Firebase.Auth.signup_failed.connect(signupFailed)
+	Firebase.Auth.signup_succeeded.connect(signupSuccess)
+
+
+func waitForAuth():
+	while Firebase.Auth.is_busy:
+		# print("wait")
+		pass
+
+
+func updateCurrentUser(node):
+	var auth = Firebase.Auth.auth
+	waitForAuth()
+	# Firebase.Auth.login_with_custom_token(auth['idtoken'])
+	waitForAuth()
+	await setCurrentUser(auth)
+	waitForAuth()
+	node.text = UserVariables.currentUser.username
+
 func doEmailLogin(_email : String, _password : String, scene):
 	email = _email
 	password = _password
 	loginScene = scene
-	if not signalsSet:
-		Firebase.Auth.login_failed.connect(loginFailed)
-		Firebase.Auth.login_succeeded.connect(loginSuccess)
-		Firebase.Auth.signup_failed.connect(signupFailed)
-		Firebase.Auth.signup_succeeded.connect(signupSuccess)
 	Firebase.Auth.login_with_email_and_password(email, password)
 
 
 func loginSuccess(result):
-	print(result)
 	# get user doc using userId
 	GameVariables.currentScreen = GameConstants.MAIN_MENU
-	var userDoc = await getUserByDocumentId(result['localid'])
+	setCurrentUser(result)
+	print('Logged in')
+	Firebase.Auth.save_auth(result)
+
+
+func setCurrentUser(authMap):
+	var userDoc = await getUserByDocumentId(authMap['localid'])
 	UserVariables.currentUser = User.new(
-		result['localid'],
+		authMap['localid'],
 		userDoc.doc_fields['email'],
 		userDoc.doc_fields['password'],
 		userDoc.doc_fields['username']
 	)
-	print('Logged in')
 
 
 func loginFailed(code, err):

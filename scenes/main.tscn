@@ -82,11 +82,11 @@ position = Vector2(0, 650)
 script = ExtResource("9_15n1m")
 
 [node name="User Info" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 387.0
 offset_bottom = 79.0
+scale = Vector2(1.5, 1.5)
 script = ExtResource("10_68gfl")
 
 [node name="Username Bar" type="Panel" parent="User Info"]

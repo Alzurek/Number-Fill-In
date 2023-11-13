@@ -154,6 +154,8 @@ func _ready() -> void:
 # Sets the configuration needed for the plugin to talk to Firebase
 # These settings come from the Firebase.gd script automatically
 func _set_config(config_json : Dictionary) -> void:
+	set_timeout(5)
+
 	_config = config_json
 	_signup_request_url %= _config.apiKey
 	_signin_request_url %= _config.apiKey
@@ -228,7 +230,7 @@ func login_anonymous() -> void:
 	if _is_ready():
 		is_busy = true
 		auth_request_type = Auth_Type.LOGIN_ANON
-		var err = await request(_base_url + _signup_request_url, _headers, HTTPClient.METHOD_POST, JSON.stringify(_anonymous_login_request_body))
+		var err = request(_base_url + _signup_request_url, _headers, HTTPClient.METHOD_POST, JSON.stringify(_anonymous_login_request_body))
 		if err != OK:
 			is_busy = false
 			Firebase._printerr("Error logging in as anonymous: %s" % err)
@@ -394,7 +396,7 @@ func manual_token_refresh(auth_data):
 		refresh_token = auth.refresh_token
 	_needs_refresh = true
 	_refresh_request_body.refresh_token = refresh_token
-	var err = await request(_refresh_request_base_url + _refresh_request_url, _headers, HTTPClient.METHOD_POST, JSON.stringify(_refresh_request_body))
+	var err = request(_refresh_request_base_url + _refresh_request_url, _headers, HTTPClient.METHOD_POST, JSON.stringify(_refresh_request_body))
 	if err != OK:
 		is_busy = false
 		Firebase._printerr("Error manually refreshing token: %s" % err)

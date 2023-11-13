@@ -6,6 +6,7 @@ var sizeScale = 0.75
 enum {ON_SCREEN, OFF_SCREEN, BACKGROUND}
 var currentState = ON_SCREEN
 
+var settingScene = preload("res://scenes/settings_menu.tscn")
 
 func _process(_delta):
 	var startButton = get_node('Main Menu/Start')

@@ -31,6 +31,7 @@
 			"uuid": "010116dc-22a3-4018-9dc5-a5c24a10191d",
 			"title": "Todo",
 			"tasks": [
+				"fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de",
 				"b59e57a6-8600-4491-99d5-6b3ea5ca199f",
 				"ea318952-2b87-4179-9e7f-975303d5d7b7",
 				"d267b38b-c87f-43ef-93a7-03e914abe345",
@@ -41,15 +42,17 @@
 				"e7b5b26f-123f-446d-a8b6-18a1812a6233",
 				"720d0070-4f42-4bcd-92fb-2949c4762527",
 				"fd65aafe-1870-4a2b-9e2e-b6097378c42f",
-				"fef15b85-53d9-4ffa-890f-c292500eaebf"
+				"fef15b85-53d9-4ffa-890f-c292500eaebf",
+				"59a77a2c-ae1b-4e5d-950c-e882e878ffe7",
+				"6e51c1b2-8f9d-42cd-b119-05c4626aa023"
 			]
 		},
 		{
 			"uuid": "e7f9f743-0664-4159-b0cb-7c770cd7ba5d",
 			"title": "Doing",
 			"tasks": [
-				"3fb85fec-8d0e-4e52-9ca9-1fb0d5247713",
-				"fc7e63bd-47aa-4cd0-a8e9-8cd84794f5de"
+				"1087b7dd-22c8-42b5-8dcc-9d7ab5e979da",
+				"838e48d7-3e6b-4094-9fff-c8bef303618c"
 			]
 		},
 		{
@@ -61,7 +64,9 @@
 				"c7c3b34a-b407-459b-8fb4-9a49c318ff6b",
 				"d76e5446-f174-4e08-b9ea-fba754efab61",
 				"8f8447bc-097a-4588-a0d6-7c700ba4255c",
-				"ff8861d6-b3e2-4762-90ed-a740b5d893b7"
+				"ff8861d6-b3e2-4762-90ed-a740b5d893b7",
+				"3fb85fec-8d0e-4e52-9ca9-1fb0d5247713",
+				"b4a8d151-7bb9-4b2a-a22c-eb0ed988ec74"
 			]
 		}
 	],
@@ -74,7 +79,7 @@
 			"steps": [
 				{
 					"details": "Android",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "iOS",
@@ -279,6 +284,62 @@
 			"title": "Fix Broken Settings",
 			"description": "Once getting the app onto a phone, it was discovered that the Color Picker Button node also opens a keyboard when opened and from my searching I cannot find any option to turn this off or even hack it to be invisible (at least through attempts)\n\nCreate a new flow for updating colors such that the keyboard never comes up unless desired (when selecting text inputs). \n\nCurrently a new implementation is working with initial color assigning (minus alpha) and working color assigning (minus updating of the color boxes)\n\nFix these minor issues.",
 			"category": "f1cd6aed-4cfc-438f-b1b0-088f26d8d501",
+			"steps": []
+		},
+		{
+			"uuid": "59a77a2c-ae1b-4e5d-950c-e882e878ffe7",
+			"title": "Fix Firestore Rules",
+			"description": "Thre Firestore rules currently allow everyone to write. this should likely only be under certain conditions, like coming from the app. \n\nInvestigate the best practices for adding security to the Firestore Access Rules.",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "b4a8d151-7bb9-4b2a-a22c-eb0ed988ec74",
+			"title": "Auto-Login",
+			"description": "After logging-in, I would like to stay signed in for subsequent loads of the app until I decide to logout of the app.",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "1087b7dd-22c8-42b5-8dcc-9d7ab5e979da",
+			"title": "User Profile",
+			"description": "",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": [
+				{
+					"details": "Logout",
+					"done": false
+				},
+				{
+					"details": "Profile Pop-up",
+					"done": false
+				},
+				{
+					"details": "Change username",
+					"done": false
+				},
+				{
+					"details": "Change email",
+					"done": false
+				},
+				{
+					"details": "Change Password",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "838e48d7-3e6b-4094-9fff-c8bef303618c",
+			"title": "Number List auto-cross-off",
+			"description": "When placing a number, it would be handy for the game to automatically cross off numbers if they are complete in the grid.\n\nNot too worried about them being in incorrect positions, just that if they exist in the solution number list, then go ahead and cross it off the list.\n\nLikewise, un-cross-off when breaking the number.\n\nRetain the ability for the user to toggle it themselves, but this will just be for display and will still behave automatically according to the action made in the grid.",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
+			"steps": []
+		},
+		{
+			"uuid": "6e51c1b2-8f9d-42cd-b119-05c4626aa023",
+			"title": "Erase button for placed numbers",
+			"description": "",
+			"category": "d8e82515-1ec0-4b79-ae4c-f7ede49d2c9c",
 			"steps": []
 		}
 	],

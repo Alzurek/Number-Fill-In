@@ -1,7 +1,7 @@
 extends Node
 
 
-func moveScene(scene, newPosition):
+func moveScene(scene, newPosition : Vector2):
 	var duration = 0.5
 	
 	var tween = create_tween()
